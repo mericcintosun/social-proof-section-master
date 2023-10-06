@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+/* CSS Variables - Start */
+
+:root {
+  --clr-primary-dark: hsl(300, 43%, 22%);
+  --clr-primary-soft: hsl(333, 80%, 67%);
+  --clr-primary-soft-opacity: hsla(333, 80%, 67%, 0.4);
+  --clr-neutral-dark: hsl(303, 10%, 53%);
+  --clr-neutral-soft: hsl(300, 24%, 96%);
+  --clr-neutral-white: hsl(0, 0%, 100%);
+
+  --font-family: 'League Spartan', sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 500;
+  --fw-black: 700;
+}
+
+/* CSS Variables - End */
+
+/* CSS Reset - Start */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* CSS Reset - End */
+
+/* General Styles - Start */
+body {
+  font-family: var(--font-family);
+  font-size: .875rem;
+  background-image: url(images/bg-pattern-top-mobile.svg);
+  background-repeat: no-repeat;
+}
+main {
+  max-width: 90%;
+  margin-inline: auto;
+  text-align: center;
+  display: grid;
+  gap: 1rem;
+}
+header {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+article {
+  display: grid;
+  gap: 1rem;
+}
+section {
+  padding: 1rem;
+}
+.box-1 > section {
+  background-color: var(--clr-primary-soft-opacity);
+  border-radius: .5rem;
+  display: grid;
+  gap: .5rem;
+}
+.box-2 > section {
+  background-color: var(--clr-primary-dark);
+  border-radius: .5rem;
+  display: grid;
+  gap: 1rem;
+  text-align: left;
+  padding: 1rem 2.6rem;
+}
+.box-2 > section > .title > img {
+  object-fit: cover;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 100%;
+  margin-right: 1.5rem;
+}
+.stars {
+  display: flex;
+  justify-content: center;
+}
+.title {
+  display: flex;
+}
+.fw-regular{font-weight: var(--fw-regular);}
+.fw-bold{font-weight: var(--fw-bold);}
+.fw-black{font-weight: var(--fw-black);}
+.clr-white{color: var(--clr-neutral-white);}
+.soft-magenta{color: var(--clr-primary-soft);}
+.primary-magenta{color: var(--clr-primary-dark);}
+.neutral-dark{color: var(--clr-neutral-dark);}
+
+/* General Styles - End */
+
+/* Typography - Start */
+
+header > h1 {
+  font-size: 2.3rem;
+  line-height: 1;
+}
+/* Typography - End */
+
+/* Media Queries - Start */
+
+@media (min-width:860px) {
+  body {
+background-image: url(images/bg-pattern-bottom-desktop.svg) , url(images/bg-pattern-top-desktop.svg);
+background-repeat: no-repeat;
+background-size: cover;
+  }
+  main {
+    margin-top: 5%;
+  }
+  .desktop-box-1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  .desktop-box-2 {
+    display: flex;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    text-align: left;
+    max-width: 40%;
+  }
+  .rated-1 {margin-left: -6rem;}
+  .rated-2 {margin-left: -3rem;}
+  .box-1 > section {
+    display: flex;
+  }
+  .star-1 > img,
+  .star-2 > img,
+  .star-3 > img {
+    aspect-ratio: 1 / 1;
+    height: 20px;
+  }
+  .box-2 {
+    display: flex;
+  }
+  .colton {
+    height: 38dvh;
+  }
+  .irene {
+    margin-top: 3rem;
+    height: 38dvh;
+  }
+  .anne {
+    margin-top: 6rem;
+    height: 38dvh;
+  }
+}
+
+@media (min-width:1024px) {
+  .colton {
+    height: 32dvh;
+  }
+  .irene {
+    margin-top: 3rem;
+    height: 32dvh;
+  }
+  .anne {
+    margin-top: 6rem;
+    height: 32dvh;
+  }
+}
+/* Media Queries - End */
